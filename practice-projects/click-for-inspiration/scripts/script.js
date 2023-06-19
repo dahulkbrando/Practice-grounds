@@ -175,10 +175,16 @@ var quotes = [
 ];
 
 function getInspired (){
-
+    var quote = selectRandomQuote();
+    var quoteBox = document.getElementById("quote-box");
+    var htmlQuote = '<p class="quote">' + quote.quote + '</p><p class="author">- ' + quote.source;
+    quoteBox.innerHTML = htmlQuote;
 }
 
 function selectRandomQuote (){
-    let randQuote =  Math.floor(math.random * quotes.length);
-    return quotes[randQuote];
+    let randQuote =  Math.floor(Math.random() * quotes.length);
+    let selectedQuote = quotes[randQuote];
+    return selectedQuote;
 }
+
+document.getElementById("quoteMeUpScotty").addEventListener("click", getInspired, false);
