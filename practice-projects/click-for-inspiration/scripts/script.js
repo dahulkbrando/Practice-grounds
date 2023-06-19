@@ -173,3 +173,12 @@ var quotes = [
 	source: "Aristotle"
 	}
 ];
+
+function getInspired (){
+
+}
+
+function selectRandomQuote (){
+    let randQuote =  Math.floor(math.random * quotes.length);
+    return quotes[randQuote];
+}
