@@ -1,13 +1,3 @@
-var categories = [
-    {
-        spiritual: 1,
-        family: 2,
-        career: 3,
-        social: 4,
-        health: 5
-    }
-]
-
 var quotes = [
 	{
 	quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -175,27 +165,34 @@ var quotes = [
 ];
 
 function getInspired (){
+	// Choose the quote and add to the container
     var quote = selectRandomQuote();
     var quoteBox = document.getElementById("quote-box");
     var htmlQuote = '<p class="inspiration" id="quote">' + quote.quote + '</p><p class="inspiration" id="author">- ' + quote.source;
     quoteBox.innerHTML = htmlQuote;
 
+	// Change the color scheme
     var colorScheme = colorRandomizer();
-    // var background = document.getElementsByClassName("main-content");
-    // var text = document.getElementsByClassName("inspiration");
     document.body.style.backgroundColor = colorScheme[0];
     document.getElementById("quote").style.color = colorScheme[1];
     document.getElementById("author").style.color = colorScheme[1];
-    //document.p.style.color = colorScheme[1];
-
-
 }
 
 function colorRandomizer (){
-    var red = Math.floor(Math.random() * 256);
-    var green = Math.floor(Math.random() * 256);
-    var blue = Math.floor(Math.random() * 256);
+	// Choose a random color for the background
+	let findColor = true;
+	do{
+		var red = 255 - Math.floor(Math.random() * 256);
+		var green = Math.floor(Math.random() * 256);
+		var blue = Math.floor(Math.random() * 256);
 
+		// Avoid grey colors so there's always a complement
+		if(red >= 166 || green >= 166 || blue >= 166){
+			findColor = false;
+		}
+	} while(findColor)
+
+	// Find the complement
     var redInverse = (255 - red);
     var greenInverse = (255 - green);
     var blueInverse = (255 - blue);
@@ -204,7 +201,7 @@ function colorRandomizer (){
     var randColorInv = 'rgb(' + redInverse + ',' + greenInverse + ',' + blueInverse + ')';
 
     colors = [randColor, randColorInv];
-    console.log(colors[1]);
+    console.log(colors[0]);
 
     return colors;
 }
