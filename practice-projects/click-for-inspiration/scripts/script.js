@@ -177,8 +177,36 @@ var quotes = [
 function getInspired (){
     var quote = selectRandomQuote();
     var quoteBox = document.getElementById("quote-box");
-    var htmlQuote = '<p class="quote">' + quote.quote + '</p><p class="author">- ' + quote.source;
+    var htmlQuote = '<p class="inspiration" id="quote">' + quote.quote + '</p><p class="inspiration" id="author">- ' + quote.source;
     quoteBox.innerHTML = htmlQuote;
+
+    var colorScheme = colorRandomizer();
+    // var background = document.getElementsByClassName("main-content");
+    // var text = document.getElementsByClassName("inspiration");
+    document.body.style.backgroundColor = colorScheme[0];
+    document.getElementById("quote").style.color = colorScheme[1];
+    document.getElementById("author").style.color = colorScheme[1];
+    //document.p.style.color = colorScheme[1];
+
+
+}
+
+function colorRandomizer (){
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
+    var redInverse = (255 - red);
+    var greenInverse = (255 - green);
+    var blueInverse = (255 - blue);
+
+    var randColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+    var randColorInv = 'rgb(' + redInverse + ',' + greenInverse + ',' + blueInverse + ')';
+
+    colors = [randColor, randColorInv];
+    console.log(colors[1]);
+
+    return colors;
 }
 
 function selectRandomQuote (){
