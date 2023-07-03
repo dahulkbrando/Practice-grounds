@@ -1,0 +1,16 @@
+body {
+    position: relative;
+    background-color: #c3c3c3;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: #4c6ebb;
+}
+
+#myCanvas {
+    width: 100%;
+    background-color: black;
+}
