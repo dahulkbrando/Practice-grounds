@@ -1,0 +1,1 @@
+These are projects used to familiarize myself with various data structures and how to use them.
