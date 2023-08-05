@@ -4,8 +4,10 @@ body{
     background-color: darkgrey;
     overflow: hidden;
     text-align: center;
+    font-family: Arial;
+    font-size: 30px;
 }
 
 #myCanvas{
-    background-color: lightgrey;
+    background-color: rgba(187, 173, 160, 1);
 }
