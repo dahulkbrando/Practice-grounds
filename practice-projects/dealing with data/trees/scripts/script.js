@@ -7,14 +7,14 @@ class Node {
 }
 
 class BinaryTree {
-    constructor(value){
+    constructor(){
         this.root = null;
     }
 
     graft(value){
         let current = this.root;
-        if(value === current.value) return undefined;
         while(true){
+            if(value === current.value) return undefined;
             if(value < current.value){
                 if(current.left === null){
                     current.left = value;
