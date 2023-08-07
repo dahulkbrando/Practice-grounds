@@ -15,29 +15,38 @@ document.addEventListener("keypress",(event)=>{
     switch(event.key){
         case "w":
         case "W":
+            console.log("up")
             board.shiftTiles("up");
             break;
         case "a":
         case "A":
+            console.log("left")
             board.shiftTiles("left");
             break;
         case "s":
         case "S":
+            console.log("down")
             board.shiftTiles("down");
             break;
         case "d":
         case "D":
-            console.log("working?")
+            console.log("right")
             board.shiftTiles("right");
             break;
+        case "c":
+        case "C":
+            console.log('clearing');
+            board.clearBoard(ctx);
+            return;
+
     }
     animate();
 })
-
+board.update();
 animate();
 
 function animate(){
-    board.update();
+    // board.update();
     board.draw(ctx);
 }
 
