@@ -4,32 +4,32 @@ let todos = JSON.parse(localStorage.getItem('myList')) || [{
     dueDate: '2025-06-01',
     id: 'make250K',
     complete: false
-},{
+}, {
     title: 'generate $5000 passive income monthly',
     dueDate: '2027-06-24',
     id: 'passive-income',
     complete: false
-},{
+}, {
     title: 'own 3 houses',
     dueDate: '2030-03-05',
     id: 'real-estate',
     complete: false
-},{
+}, {
     title: 'own a million dollar company',
     dueDate: '2027-06-24',
     id: 'a-milli',
     complete: false
-},{
+}, {
     title: 'take the FE exam',
     dueDate: '2023-10-15',
     id: 'EIT',
     complete: false
-},{
+}, {
     title: 'take the PE exam',
     dueDate: '2028-04-01',
     id: 'Professional',
     complete: false
-},{
+}, {
     title: 'build a task list webapp',
     dueDate: '2023-08-15',
     id: 'task-list-working',
